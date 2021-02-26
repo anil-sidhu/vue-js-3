@@ -1,6 +1,6 @@
 <template>
 <img alt="Vue logo" src="./assets/logo.png">
-<HelloWorld msg="Event in vue js 3" />
+<HelloWorld msg="" />
 <Home />
 
 </template>
