@@ -1,45 +1,21 @@
 <template>
-<h1>Reuse Component</h1>
-<ul>
-    <li v-for="item in users" :key="item.name">
-
-        <User :data="item" :getData="getData" />
-    </li>
-</ul>
+<h1>{{text}}</h1>
+<div v-html="tag + tag2 + tag3">
+</div>
 </template>
 
 <script>
-import User from './User.vue'
 export default {
     name: "Home",
-    components: {
-        User
-    },
-    methods: {
-        getData(name) {
-            alert(name)
-        }
-    },
-    data() {
+    data()
+    {
         return {
-            users: [{
-                    name: 'anil',
-                    email: 'anil@test.com'
-                },
-                {
-                    name: 'sam',
-                    email: 'sam@test.com'
-                },
-                {
-                    name: 'peter',
-                    email: 'peter@test.com'
-                },
-                {
-                    name: 'bruce',
-                    email: 'bruce@test.com'
-                },
+            text:"anil sidhu",
+            tag:"<h2>Anil Sidhu</h2>",
+            tag2:"<h2>Peter</h2>",
+            tag3:"<h2>Burce</h2>",
 
-            ]
+
         }
     }
 }
