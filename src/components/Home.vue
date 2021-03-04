@@ -1,21 +1,24 @@
 <template>
-<h1>{{text}}</h1>
-<div v-html="tag + tag2 + tag3">
-</div>
+<h1>CSS binding</h1>
+<h2 class="staticClass" :class="adjustStyle">Home Component</h2>
+<button v-on:click="colorfull=!colorfull">Apply Style</button>
 </template>
 
 <script>
 export default {
     name: "Home",
-    data()
-    {
+    data() {
         return {
-            text:"anil sidhu",
-            tag:"<h2>Anil Sidhu</h2>",
-            tag2:"<h2>Peter</h2>",
-            tag3:"<h2>Burce</h2>",
-
-
+            colorfull: false
+        }
+    },
+    computed: {
+        adjustStyle() {
+            return {
+                green: this.colorfull,
+                err: true,
+                other: false
+            }
         }
     }
 }
@@ -24,5 +27,20 @@ export default {
 <style scoped>
 h1 {
     color: orange
+}
+
+.green {
+    background-color: green;
+    width: 200px;
+    padding: 10px;
+    color: #fff
+}
+
+.err {
+    color: red
+}
+
+.other {
+    font-size: 70px
 }
 </style>
