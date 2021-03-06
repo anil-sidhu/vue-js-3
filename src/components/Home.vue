@@ -1,23 +1,24 @@
 <template>
-<h1>Props in Vue js 3</h1>
-<Student :name="name" />
-<Teacher :name="name" />
+<h1>User Name : {{name}}</h1>
+<User :getUser="getUserName" />
 </template>
 
 <script>
-import Student from './Student.vue'
-import Teacher from './Teacher.vue'
-
+import User from './User.vue'
 export default {
     name: "Home",
     data() {
         return {
-            name: "Bruce"
+            name: ''
         }
     },
     components: {
-        Student,
-        Teacher
+        User
+    },
+    methods: {
+        getUserName(name) {
+            this.name = name
+        }
     }
 }
 </script>
