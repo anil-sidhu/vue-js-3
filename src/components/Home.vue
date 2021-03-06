@@ -1,25 +1,23 @@
 <template>
-<h1>CSS binding</h1>
-<h2 class="staticClass" :class="adjustStyle">Home Component</h2>
-<button v-on:click="colorfull=!colorfull">Apply Style</button>
+<h1>Props in Vue js 3</h1>
+<Student :name="name" />
+<Teacher :name="name" />
 </template>
 
 <script>
+import Student from './Student.vue'
+import Teacher from './Teacher.vue'
+
 export default {
     name: "Home",
     data() {
         return {
-            colorfull: false
+            name: "Bruce"
         }
     },
-    computed: {
-        adjustStyle() {
-            return {
-                green: this.colorfull,
-                err: true,
-                other: false
-            }
-        }
+    components: {
+        Student,
+        Teacher
     }
 }
 </script>
@@ -27,20 +25,5 @@ export default {
 <style scoped>
 h1 {
     color: orange
-}
-
-.green {
-    background-color: green;
-    width: 200px;
-    padding: 10px;
-    color: #fff
-}
-
-.err {
-    color: red
-}
-
-.other {
-    font-size: 70px
 }
 </style>
