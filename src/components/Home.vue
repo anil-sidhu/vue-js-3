@@ -1,23 +1,21 @@
 <template>
-<h1>User Name : {{name}}</h1>
-<User :getUser="getUserName" />
+<h1>Ref in Vue js 3</h1>
+<input type="text" ref="input" />
+<button v-on:click="getData" >Click Me</button>
 </template>
 
 <script>
-import User from './User.vue'
 export default {
     name: "Home",
-    data() {
-        return {
-            name: ''
-        }
-    },
-    components: {
-        User
-    },
-    methods: {
-        getUserName(name) {
-            this.name = name
+    methods:{
+        getData()
+        {
+            // this.$refs.input.focus();
+            // this.$refs.input.value="code step by step";
+            // this.$refs.input.style.color="red"
+            console.warn(this.$refs.input.value)
+
+
         }
     }
 }
