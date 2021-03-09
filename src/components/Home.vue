@@ -1,6 +1,10 @@
 <template>
 <h1>Simple Form</h1>
-<p>{{form}}</p>
+<ul>
+<li v-for="item in error" v-bind:key="item">
+{{item}} is valid
+</li>
+</ul>
 <form>
     <label>Email : </label>
     <input type="text" placeholder="enter email" v-model="form.email" />
@@ -44,13 +48,25 @@ export default {
                 country: '',
                 gender: '',
                 technology: []
-            }
+            },
+            error: []
         }
     },
     methods: {
         login() {
-            
-            console.warn(this.form)
+
+            this.error = []
+            for (const item in this.form) {
+                if (this.form[item] === "" || this.form[item].length === 0) {
+                    this.error.push(item)
+                }
+               
+            }
+             if (this.error.length === 0) {
+                    alert("Data has been submitted")
+                }
+            console.warn(this.error)
+
         }
     }
 }
