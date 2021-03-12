@@ -1,18 +1,13 @@
 <template>
-<h2>User Component</h2>
-<button v-on:click="getUser(userName)" >Send User Name to Parent</button>
+<div>
+<h3 >Bruce</h3>
+<h3>Peter</h3>
+<h3 v-bind="$attrs">Tony</h3>
+</div>
 </template>
-
 <script>
 export default {
-    name: "User",
-    data() {
-        return {
-            userName: "Peter"
-        }
-    },
-    props:{
-        getUser:Function
-    }
+    name:'User',
+    inheritAttrs:false
 }
 </script>

@@ -1,19 +1,14 @@
 <template>
-<h1>Form Modifiers</h1>
-<input type="number"  v-model.number.lazy="item" />
-<h2> Item is:{{item}}</h2>
-<h2> Item is:{{typeof item}}</h2>
-
+<h1>Non-Props Data</h1>
+<User item="some Data" name="user-cmp" />
 </template>
 
 <script>
+import User from './User.vue'
 export default {
     name: "Home",
-    data()
-    {
-        return {
-            item:''
-        }
+    components:{
+        User
     }
 }
 </script>
