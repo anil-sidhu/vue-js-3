@@ -1,7 +1,6 @@
 <template>
 <img alt="Vue logo" src="./assets/logo.png">
 <Home />
-
 </template>
 
 <script>
@@ -14,4 +13,3 @@ export default {
     }
 }
 </script>
-

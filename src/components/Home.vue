@@ -1,15 +1,31 @@
 <template>
-<h1>Non-Props Data</h1>
-<User item="some Data" name="user-cmp" />
+<h1>Computed Property {{dollors}} </h1>
+<h2>{{getResult}}</h2>
+<h2>{{getData()}}</h2>
 </template>
 
 <script>
-import User from './User.vue'
 export default {
     name: "Home",
-    components:{
-        User
+    data() {
+        return {
+            dollors: 100,
+            rupeeVal: 70,
+            discount: 10,
+        }
+    },
+    methods: {
+        getData() {
+            return (this.dollors * this.rupeeVal) - this.discount
+
+        }
+    },
+    computed: {
+        getResult() {
+            return (this.dollors * this.rupeeVal) - this.discount
+        }
     }
+
 }
 </script>
 
