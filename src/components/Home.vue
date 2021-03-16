@@ -1,31 +1,18 @@
 <template>
-<h1>Computed Property {{dollors}} </h1>
-<h2>{{getResult}}</h2>
-<h2>{{getData()}}</h2>
+<Child></Child>
+<Child><h1>Peter</h1></Child>
+
+
+
 </template>
 
 <script>
+import Child from './Child.vue'
 export default {
     name: "Home",
-    data() {
-        return {
-            dollors: 100,
-            rupeeVal: 70,
-            discount: 10,
-        }
-    },
-    methods: {
-        getData() {
-            return (this.dollors * this.rupeeVal) - this.discount
-
-        }
-    },
-    computed: {
-        getResult() {
-            return (this.dollors * this.rupeeVal) - this.discount
-        }
+    components: {
+        Child
     }
-
 }
 </script>
 
