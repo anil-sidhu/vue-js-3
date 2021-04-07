@@ -1,17 +1,26 @@
 <template>
-<h1>Teleport components</h1>
-<teleport to="#footer">
-<Footer />
-</teleport>
+<h1>beforeMount and mounted {{name}}</h1>
 </template>
 
 <script>
-import Footer from './Footer.vue';
 export default {
     name: "Home",
-    components:{
-        Footer
-    }
+    data() {
+
+        return {
+            name: 'Anil'
+        }
+    },
+    beforeMount()
+    {
+        console.warn("beforeMount",this.$el)
+    },
+     mounted()
+    { 
+        console.warn("mounted",this.$el)
+    },
+
+
 }
 </script>
 
